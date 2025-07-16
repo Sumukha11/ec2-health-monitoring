@@ -1,0 +1,10 @@
+EC2 CPU Utilization:
+
+EC2 Memory Usage:
+Total: 957 MB | Used: 396 MB | Free: 241 MB | Usage: 41.38%
+
+EC2 Disk Usage (/ partition):
+Size: 6.8G | Used: 2.9G | Available: 3.9G | Usage: 44%
+
+Docker Container Status:
+Alert sent: Docker Container Stopped
