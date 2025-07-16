@@ -1,0 +1,33 @@
+Crontab Setup Instructions for EC2 Monitoring Script
+
+Step 1: Open crontab editor
+--------------------------------
+crontab -e
+
+Step 2: Choose an editor (only for first-time users)
+----------------------------------------------------
+Select option 1 for nano (easiest):
+  1. /bin/nano
+
+Step 3: Add the following line to schedule the monitor.py script
+----------------------------------------------------------------
+*/2 * * * * /usr/bin/python3 /home/ubuntu/health-check/monitor.py >> /home/ubuntu/health-check/cron.log 2>&1
+
+Explanation:
+- */2 * * * * → runs the job every 2 minutes
+- /usr/bin/python3 → full path to Python 3
+- /home/ubuntu/health-check/monitor.py → full path to your script
+- >> /home/ubuntu/health-check/cron.log → logs the output to a file
+- 2>&1 → sends both stdout and stderr to the log file
+
+Step 4: Save and exit
+---------------------
+If using nano:
+  Press Ctrl + O, then Enter to save
+  Press Ctrl + X to exit
+
+Step 5: Verify the cron job is installed
+----------------------------------------
+crontab -l
+
+You should see your job listed. Cron will now automatically run the script every 2 minutes.
